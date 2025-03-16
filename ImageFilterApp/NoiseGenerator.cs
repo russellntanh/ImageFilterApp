@@ -10,6 +10,8 @@ namespace ImageFilterApp
 {
     public static class NoiseGenerator
     {
+        // Thêm db (decibel) vào ảnh gốc ban đầu
+        // Noise Ratio = 10^(-dB / 20) là tỉ lệ hay số lượng pixel bị nhiễu trong ảnh
         public static Bitmap SaltPepperNoiseGenerator(Bitmap input, double db)
         {
             Random random = new Random();
