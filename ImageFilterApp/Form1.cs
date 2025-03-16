@@ -77,6 +77,7 @@ namespace ImageFilterApp
 
             Bitmap noisyImage = NoiseGenerator.GaussianNoiseGenerator(originalImage, 10);
             pictureProcessed.Image = noisyImage;
+            pictureProcessed.SizeMode=PictureBoxSizeMode.Zoom;  
         }
 
         private void saltPepperNoiseToolStripMenuItem_Click(object sender, EventArgs e)
