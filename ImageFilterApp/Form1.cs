@@ -67,7 +67,19 @@ namespace ImageFilterApp
             }
         }
 
-        private void noiseGeneratorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void gaussianNoiseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (originalImage == null)
+            {
+                MessageBox.Show("Please open an image first.");
+                return;
+            }
+
+            Bitmap noisyImage = NoiseGenerator.GaussianNoiseGenerator(originalImage, 10);
+            pictureProcessed.Image = noisyImage;
+        }
+
+        private void saltPepperNoiseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (originalImage == null)
             {

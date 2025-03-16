@@ -35,6 +35,8 @@
             exitToolStripMenuItem = new ToolStripMenuItem();
             algorithmsToolStripMenuItem = new ToolStripMenuItem();
             noiseGeneratorToolStripMenuItem = new ToolStripMenuItem();
+            saltPepperNoiseToolStripMenuItem = new ToolStripMenuItem();
+            gaussianNoiseToolStripMenuItem = new ToolStripMenuItem();
             medianFilterToolStripMenuItem = new ToolStripMenuItem();
             pictureOriginal = new PictureBox();
             pictureProcessed = new PictureBox();
@@ -62,21 +64,21 @@
             // openImageToolStripMenuItem
             // 
             openImageToolStripMenuItem.Name = "openImageToolStripMenuItem";
-            openImageToolStripMenuItem.Size = new Size(180, 22);
+            openImageToolStripMenuItem.Size = new Size(175, 22);
             openImageToolStripMenuItem.Text = "Open Image";
             openImageToolStripMenuItem.Click += openImageToolStripMenuItem_Click;
             // 
             // saveOutputImageToolStripMenuItem
             // 
             saveOutputImageToolStripMenuItem.Name = "saveOutputImageToolStripMenuItem";
-            saveOutputImageToolStripMenuItem.Size = new Size(180, 22);
+            saveOutputImageToolStripMenuItem.Size = new Size(175, 22);
             saveOutputImageToolStripMenuItem.Text = "Save Output Image";
             saveOutputImageToolStripMenuItem.Click += saveOutputImageToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(180, 22);
+            exitToolStripMenuItem.Size = new Size(175, 22);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -89,10 +91,24 @@
             // 
             // noiseGeneratorToolStripMenuItem
             // 
+            noiseGeneratorToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saltPepperNoiseToolStripMenuItem, gaussianNoiseToolStripMenuItem });
             noiseGeneratorToolStripMenuItem.Name = "noiseGeneratorToolStripMenuItem";
             noiseGeneratorToolStripMenuItem.Size = new Size(180, 22);
             noiseGeneratorToolStripMenuItem.Text = "Noise Generator";
-            noiseGeneratorToolStripMenuItem.Click += noiseGeneratorToolStripMenuItem_Click;
+            // 
+            // saltPepperNoiseToolStripMenuItem
+            // 
+            saltPepperNoiseToolStripMenuItem.Name = "saltPepperNoiseToolStripMenuItem";
+            saltPepperNoiseToolStripMenuItem.Size = new Size(180, 22);
+            saltPepperNoiseToolStripMenuItem.Text = "Salt-Pepper noise";
+            saltPepperNoiseToolStripMenuItem.Click += saltPepperNoiseToolStripMenuItem_Click;
+            // 
+            // gaussianNoiseToolStripMenuItem
+            // 
+            gaussianNoiseToolStripMenuItem.Name = "gaussianNoiseToolStripMenuItem";
+            gaussianNoiseToolStripMenuItem.Size = new Size(180, 22);
+            gaussianNoiseToolStripMenuItem.Text = "Gaussian noise";
+            gaussianNoiseToolStripMenuItem.Click += gaussianNoiseToolStripMenuItem_Click;
             // 
             // medianFilterToolStripMenuItem
             // 
@@ -148,5 +164,7 @@
         private PictureBox pictureProcessed;
         private ToolStripMenuItem saveOutputImageToolStripMenuItem;
         private ToolStripMenuItem noiseGeneratorToolStripMenuItem;
+        private ToolStripMenuItem saltPepperNoiseToolStripMenuItem;
+        private ToolStripMenuItem gaussianNoiseToolStripMenuItem;
     }
 }
