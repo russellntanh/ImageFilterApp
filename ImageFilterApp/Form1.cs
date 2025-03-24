@@ -19,9 +19,9 @@ namespace ImageFilterApp
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     originalImage = new Bitmap(openFileDialog.FileName);
+                    pictureOriginal.Size = new Size(originalImage.Width, originalImage.Height);
                     pictureOriginal.Image = originalImage;
                     pictureOriginal.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureProcessed.Image = null;
                 }
             }
         }
@@ -77,7 +77,7 @@ namespace ImageFilterApp
 
             Bitmap noisyImage = NoiseGenerator.GaussianNoiseGenerator(originalImage, 10);
             pictureProcessed.Image = noisyImage;
-            pictureProcessed.SizeMode=PictureBoxSizeMode.Zoom;  
+            pictureProcessed.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         private void saltPepperNoiseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,5 +92,38 @@ namespace ImageFilterApp
             pictureProcessed.Image = noisyImage;
             pictureProcessed.SizeMode = PictureBoxSizeMode.Zoom;
         }
+
+        private void originalImageInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (originalImage == null)
+            {
+                MessageBox.Show("No input image.");
+                return;
+            }
+            HistogramForm histogramForm = new HistogramForm(originalImage);
+            histogramForm.ShowDialog();
+        }
+
+        private void processedImageInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (processedImage == null)
+            {
+                MessageBox.Show("No image processed.");
+                return;
+            }
+            HistogramForm histogramForm = new HistogramForm(processedImage);
+            histogramForm.ShowDialog();
+        }
+
+        private void histogramEqualizationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (originalImage != null)
+            {
+                processedImage = ImageHelper.EqualizeHistogram(originalImage);
+                pictureProcessed.Size = new Size(originalImage.Width, originalImage.Height);
+                pictureProcessed.Image = processedImage;
+            }
+        }
+
     }
 }

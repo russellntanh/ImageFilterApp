@@ -38,6 +38,10 @@
             saltPepperNoiseToolStripMenuItem = new ToolStripMenuItem();
             gaussianNoiseToolStripMenuItem = new ToolStripMenuItem();
             medianFilterToolStripMenuItem = new ToolStripMenuItem();
+            histogramEqualizationToolStripMenuItem = new ToolStripMenuItem();
+            imageInformationToolStripMenuItem = new ToolStripMenuItem();
+            originalImageInfoToolStripMenuItem = new ToolStripMenuItem();
+            processedImageInfoToolStripMenuItem = new ToolStripMenuItem();
             pictureOriginal = new PictureBox();
             pictureProcessed = new PictureBox();
             menuStrip1.SuspendLayout();
@@ -47,7 +51,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, algorithmsToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, algorithmsToolStripMenuItem, imageInformationToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(829, 24);
@@ -84,7 +88,7 @@
             // 
             // algorithmsToolStripMenuItem
             // 
-            algorithmsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { noiseGeneratorToolStripMenuItem, medianFilterToolStripMenuItem });
+            algorithmsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { noiseGeneratorToolStripMenuItem, medianFilterToolStripMenuItem, histogramEqualizationToolStripMenuItem });
             algorithmsToolStripMenuItem.Name = "algorithmsToolStripMenuItem";
             algorithmsToolStripMenuItem.Size = new Size(78, 20);
             algorithmsToolStripMenuItem.Text = "Algorithms";
@@ -93,35 +97,63 @@
             // 
             noiseGeneratorToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saltPepperNoiseToolStripMenuItem, gaussianNoiseToolStripMenuItem });
             noiseGeneratorToolStripMenuItem.Name = "noiseGeneratorToolStripMenuItem";
-            noiseGeneratorToolStripMenuItem.Size = new Size(180, 22);
+            noiseGeneratorToolStripMenuItem.Size = new Size(197, 22);
             noiseGeneratorToolStripMenuItem.Text = "Noise Generator";
             // 
             // saltPepperNoiseToolStripMenuItem
             // 
             saltPepperNoiseToolStripMenuItem.Name = "saltPepperNoiseToolStripMenuItem";
-            saltPepperNoiseToolStripMenuItem.Size = new Size(180, 22);
+            saltPepperNoiseToolStripMenuItem.Size = new Size(166, 22);
             saltPepperNoiseToolStripMenuItem.Text = "Salt-Pepper noise";
             saltPepperNoiseToolStripMenuItem.Click += saltPepperNoiseToolStripMenuItem_Click;
             // 
             // gaussianNoiseToolStripMenuItem
             // 
             gaussianNoiseToolStripMenuItem.Name = "gaussianNoiseToolStripMenuItem";
-            gaussianNoiseToolStripMenuItem.Size = new Size(180, 22);
+            gaussianNoiseToolStripMenuItem.Size = new Size(166, 22);
             gaussianNoiseToolStripMenuItem.Text = "Gaussian noise";
             gaussianNoiseToolStripMenuItem.Click += gaussianNoiseToolStripMenuItem_Click;
             // 
             // medianFilterToolStripMenuItem
             // 
             medianFilterToolStripMenuItem.Name = "medianFilterToolStripMenuItem";
-            medianFilterToolStripMenuItem.Size = new Size(180, 22);
+            medianFilterToolStripMenuItem.Size = new Size(197, 22);
             medianFilterToolStripMenuItem.Text = "Median Filter";
             medianFilterToolStripMenuItem.Click += medianFilterToolStripMenuItem_Click;
+            // 
+            // histogramEqualizationToolStripMenuItem
+            // 
+            histogramEqualizationToolStripMenuItem.Name = "histogramEqualizationToolStripMenuItem";
+            histogramEqualizationToolStripMenuItem.Size = new Size(197, 22);
+            histogramEqualizationToolStripMenuItem.Text = "Histogram Equalization";
+            histogramEqualizationToolStripMenuItem.Click += histogramEqualizationToolStripMenuItem_Click;
+            // 
+            // imageInformationToolStripMenuItem
+            // 
+            imageInformationToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { originalImageInfoToolStripMenuItem, processedImageInfoToolStripMenuItem });
+            imageInformationToolStripMenuItem.Name = "imageInformationToolStripMenuItem";
+            imageInformationToolStripMenuItem.Size = new Size(118, 20);
+            imageInformationToolStripMenuItem.Text = "Image Information";
+            // 
+            // originalImageInfoToolStripMenuItem
+            // 
+            originalImageInfoToolStripMenuItem.Name = "originalImageInfoToolStripMenuItem";
+            originalImageInfoToolStripMenuItem.Size = new Size(187, 22);
+            originalImageInfoToolStripMenuItem.Text = "Original Image Info";
+            originalImageInfoToolStripMenuItem.Click += originalImageInfoToolStripMenuItem_Click;
+            // 
+            // processedImageInfoToolStripMenuItem
+            // 
+            processedImageInfoToolStripMenuItem.Name = "processedImageInfoToolStripMenuItem";
+            processedImageInfoToolStripMenuItem.Size = new Size(187, 22);
+            processedImageInfoToolStripMenuItem.Text = "Processed Image Info";
+            processedImageInfoToolStripMenuItem.Click += processedImageInfoToolStripMenuItem_Click;
             // 
             // pictureOriginal
             // 
             pictureOriginal.Location = new Point(0, 30);
             pictureOriginal.Name = "pictureOriginal";
-            pictureOriginal.Size = new Size(400, 400);
+            //pictureOriginal.Size = new Size(400, 400);
             pictureOriginal.TabIndex = 1;
             pictureOriginal.TabStop = false;
             // 
@@ -129,7 +161,7 @@
             // 
             pictureProcessed.Location = new Point(410, 30);
             pictureProcessed.Name = "pictureProcessed";
-            pictureProcessed.Size = new Size(400, 400);
+            //pictureProcessed.Size = new Size(400, 400);
             pictureProcessed.TabIndex = 2;
             pictureProcessed.TabStop = false;
             // 
@@ -166,5 +198,9 @@
         private ToolStripMenuItem noiseGeneratorToolStripMenuItem;
         private ToolStripMenuItem saltPepperNoiseToolStripMenuItem;
         private ToolStripMenuItem gaussianNoiseToolStripMenuItem;
+        private ToolStripMenuItem imageInformationToolStripMenuItem;
+        private ToolStripMenuItem originalImageInfoToolStripMenuItem;
+        private ToolStripMenuItem processedImageInfoToolStripMenuItem;
+        private ToolStripMenuItem histogramEqualizationToolStripMenuItem;
     }
 }
